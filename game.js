@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((loadedQuestions) => {
       questions = loadedQuestions.results.map((loadedQuestion) => {
         const formattedQuestion = {
-          question: loadedQuestion.question.replace(/&quot;/g,'"').replace(/&rsquo;/g,'\'').replace(/&#039;/g,'\'')
+          question: loadedQuestion.question.replace(/&quot;/g,'"').replace(/&rsquo;/g,'\'').replace(/&#039;/g,'\'').replace(/&amp;/g,'&')
         };
 
         const answerChoices = [...loadedQuestion.incorrect_answers];
