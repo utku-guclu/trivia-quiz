@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((loadedQuestions) => {
       questions = loadedQuestions.results.map((loadedQuestion) => {
         const formattedQuestion = {
-          question: loadedQuestion.question.replace(/&quot;/g,'"').replace(/&rsquo;/g,'\'')
+          question: loadedQuestion.question.replace(/&quot;/g,'"').replace(/&rsquo;/g,'\'').replace(/&#039;/g,'\'')
         };
 
         const answerChoices = [...loadedQuestion.incorrect_answers];
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((err) => console.log(err));
 
-  const startGame = () => {
+  const startGame = async () => {
     questionCounter = 0;
     score = 0;
     availableQuesions = [...questions];
