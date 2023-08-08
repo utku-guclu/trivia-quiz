@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // update the score
       localStorage.setItem("mostRecentScore", score);
       //go to the end page
-      return window.location.assign("/end.html");
+      return window.location.assign("/trivia-quiz/end.html");
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
